@@ -1,3 +1,4 @@
+package warmup;
 import java.util.*;
 
 public class SimpleArraySum {
