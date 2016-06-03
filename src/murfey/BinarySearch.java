@@ -85,11 +85,13 @@ public class BinarySearch
       return the index of value x OR
       -1 if value is not in the array.
       don't run in linear time!! */
-   public int findInArray(int[] a, int x)
-   {
-      return -1;     // another possible wrong answer :)
-   }
-   
+	public int findInArray(int[] a, int x) {
+		for (int i = 0; i < a.length; i++)
+			if (a[i] == x)
+				return i;
+		return -1;
+	}
+
    public int[] mergeSort(int[] a)
    {
       if( a.length == 1 ) return a;
