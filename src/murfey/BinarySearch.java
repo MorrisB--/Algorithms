@@ -7,7 +7,7 @@ public class BinarySearch
 {
    public static void main(String[] args)
    {
-      System.out.println( "MY NAME" );
+      System.out.println( "Morris Ballenger" );
       System.out.println( "TODAY'S DATE" );
       System.out.println( "CS 324 - Intro to Design of Algorithms" );
       DecimalFormat df = new DecimalFormat("0.000000000");
@@ -113,9 +113,25 @@ public class BinarySearch
    }
    
    /* this is the method you need to write */
+   /*
+    * This method should take two arrays, combine them, and sort them. 
+    * 
+    */
    public static int[] merge(int[] a, int[] b)
    {
       int[] c = new int[a.length + b.length];
+      
+      // first add everything in a
+      for(int i =0; i<a.length;i++)
+    	c[i] = a[i];
+      
+      // now add everything in b
+      for (int i = 0; i<b.length;i++)
+    	  c[i+a.length]=b[i];
+      
+      // time to sort
+      
+      
       return c;         // c is all 0s!  replace this method with your own!
    }
 }
