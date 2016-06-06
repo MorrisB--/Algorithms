@@ -78,7 +78,15 @@ public class BinarySearch
    // make it run in log2(n) time! 
    public double squareRoot(int n)
    {
-      return 0;  // wrong answer :)
+		double temp;
+		double squareRoot = n / 2;
+
+		do {
+			temp = squareRoot;
+			squareRoot = (temp + (n / temp)) / 2;
+		} while ((temp - squareRoot) != 0);
+
+		return squareRoot;
    }
    
    /* search the array a for value x 
@@ -112,37 +120,26 @@ public class BinarySearch
       return mFinal;
    }
    
-   /* this is the method you need to write */
-   /*
-    * This method should take two arrays, combine them, and sort them. 
-    * 
-    */
-   public static int[] merge(int[] a, int[] b)
-   {
-      int[] c = new int[a.length + b.length];
-      
-      // first add everything in a
-      for(int i =0; i<a.length;i++)
-    	c[i] = a[i];
-      
-      // now add everything in b
-      for (int i = 0; i<b.length;i++)
-    	  c[i+a.length]=b[i];
-      
-      // time to sort
-      
-      for (int i =0;i<c.length;i++){
-    	  for(int j=0;j<c.length;j++){
-    		  if(i != j && c[j]>c[i]){
-    			  c[i] = c[i] + c[j];
-    			  c[j] = c[i] - c[j];
-    			  c[i] = c[i] - c[j];
-    		  }
-    			  
-    	  }
-      }
-      
-      
-      return c;         // c is all 0s!  replace this method with your own!
-   }
+	/* this is the method you need to write */
+	public static int[] merge(int[] a, int[] b) {
+		int[] c = new int[a.length + b.length];
+
+		for (int i = 0; i < a.length; i++)
+			c[i] = a[i];
+
+		for (int i = 0; i < b.length; i++)
+			c[i + a.length] = b[i];
+
+		for (int i = 0; i < c.length; i++) {
+			for (int j = 0; j < c.length; j++) {
+				if (i != j && c[j] > c[i]) {
+					c[i] = c[i] + c[j];
+					c[j] = c[i] - c[j];
+					c[i] = c[i] - c[j];
+				}
+			}
+		}
+
+		return c;
+	}
 }
