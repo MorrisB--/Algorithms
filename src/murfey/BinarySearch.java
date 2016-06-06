@@ -131,6 +131,17 @@ public class BinarySearch
       
       // time to sort
       
+      for (int i =0;i<c.length;i++){
+    	  for(int j=0;j<c.length;j++){
+    		  if(i != j && c[j]>c[i]){
+    			  c[i] = c[i] + c[j];
+    			  c[j] = c[i] - c[j];
+    			  c[i] = c[i] - c[j];
+    		  }
+    			  
+    	  }
+      }
+      
       
       return c;         // c is all 0s!  replace this method with your own!
    }
