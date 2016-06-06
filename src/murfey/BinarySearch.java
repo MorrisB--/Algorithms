@@ -8,7 +8,7 @@ public class BinarySearch
    public static void main(String[] args)
    {
       System.out.println( "Morris Ballenger" );
-      System.out.println( "TODAY'S DATE" );
+      System.out.println( "6/6/16" );
       System.out.println( "CS 324 - Intro to Design of Algorithms" );
       DecimalFormat df = new DecimalFormat("0.000000000");
       BinarySearch bin = new BinarySearch();
