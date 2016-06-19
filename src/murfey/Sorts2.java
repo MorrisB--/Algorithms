@@ -112,8 +112,26 @@ public class Sorts2
          note that merge is already written */
 	public static int[] mergeSort(int[] a, int low, int high) {
 		if (low<high){
-		//	mergeSort(a, low, high/2);
-		//	mergeSort(a,high/2,high);
+		int[] b = new int[high/2];
+			int[] c = new int[a.length - high / 2];
+
+			// Filling up array b
+			int i = 0;
+			for (i = 0; i < b.length; i++)
+				b[i] = a[i];
+
+			// Filling up array c
+			for (int j = c.length-1; j > high/2; j--)
+				c[j] = a[j];
+
+			// Sorting the left side
+			mergeSort(b, 0, b.length - 1);
+
+			// Sorting the right side
+			mergeSort(c, 0, c.length - 1);
+			
+			merge(b,c);
+
 		}
 		return a;
 	}
