@@ -1,13 +1,21 @@
 package murfey;
 
+import java.util.Arrays;
+
 public class Test {
 	public static void main(String[] args) {
 
-		int[] coins = { 25, 17, 1 };
-		int val = 35;
+		System.out.println("Running...");
+		
+		int[] coins = new int[30];
+		for (int i = 0; i < coins.length; i++)
+			coins[i] = (int) (Math.random() * 1000);
+
+		int val = (int) (Math.random() * 100);
 		int mC = minCoins(val, coins);
 
-		System.out.println(mC + " coins needed.");
+		System.out.println(Arrays.toString(coins));
+		System.out.println(mC + " coins needed for " + val);
 
 	}
 
