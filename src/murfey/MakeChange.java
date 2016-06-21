@@ -2,14 +2,17 @@ package murfey;
 
 import java.util.Arrays;
 
-public class Test {
+public class MakeChange {
 	public static void main(String[] args) {
 
 		System.out.println("Running...");
-		
+
 		int[] coins = new int[30];
 		for (int i = 0; i < coins.length; i++)
 			coins[i] = (int) (Math.random() * 1000);
+
+		// Making sure a penny is in there
+		coins[0] = 1;
 
 		int val = (int) (Math.random() * 100);
 		int mC = minCoins(val, coins);
