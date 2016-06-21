@@ -5,8 +5,12 @@ public class Test {
 
 	}
 
-	public static void minCoins(int val, int[] coins) {
+	public static int minCoins(int val, int[] coins) {
 
+		if (val == 0)
+			return 0;
+		
+		return 0;
 	}
 
 }
