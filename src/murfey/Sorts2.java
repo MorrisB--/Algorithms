@@ -170,10 +170,33 @@ public class Sorts2 {
 	}
 
 	public static int partition(int[] a, int low, int high) {
-		return a.length / 2;
+		int i = low, j = high;
+		int temp;
+		int pivot = a[(low + high) / 2];
+
+		while (i <= j) {
+			while (a[i] < pivot)
+				i++;
+			while (a[j] > pivot)
+				j--;
+			if (i <= j) {
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+				i++;
+				j--;
+			}
+		}
+
+		return i;
 	}
 
 	public static int[] quickSort(int[] a, int low, int high) {
+		int index = partition(a, low, high);
+		if (low < index - 1)
+			quickSort(a, low, index - 1);
+		if (index < high)
+			quickSort(a, index, high);
 		return a;
-	}
+	  }
 }
