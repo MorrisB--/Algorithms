@@ -120,29 +120,20 @@ public class Sorts2 {
 	 * here is our mergeSort from class - note that merge is already written
 	 */
 	public static int[] mergeSort(int[] a, int low, int high) {
-		if (low < high) {
-			int[] b = new int[high / 2];
-			int[] c = new int[a.length - high / 2];
+		if (a.length <= 1)
+			return a;
 
-			// Filling up array b
-			int i = 0;
-			for (i = 0; i < b.length; i++)
-				b[i] = a[i];
+		int[] b = new int[a.length / 2];
+		int[] c = new int[a.length - b.length];
 
-			// Filling up array c
-			for (int j = c.length - 1; j > high / 2; j--)
-				c[j] = a[j];
+		System.arraycopy(a, 0, b, 0, b.length);
+		System.arraycopy(a, b.length, c, 0, c.length);
 
-			// Sorting the left side
-			mergeSort(b, 0, b.length - 1);
+		// Sort each half
+		b = mergeSort(b, 0, b.length);
+		c = mergeSort(c, 0, c.length);
 
-			// Sorting the right side
-			mergeSort(c, 0, c.length - 1);
-
-			merge(b, c);
-
-		}
-		return a;
+		return merge(b, c);
 	}
 
 	/* this is the merge we wrote in class */
