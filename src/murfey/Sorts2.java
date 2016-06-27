@@ -170,9 +170,7 @@ public class Sorts2 {
 	}
 
 	public static int partition(int[] a, int low, int high) {
-		int i = low, j = high;
-		int temp;
-		int pivot = a[(low + high) / 2];
+	int i = low, j = high, temp, pivot=a[(low +high)/2];
 
 		while (i <= j) {
 			while (a[i] < pivot)
@@ -198,5 +196,5 @@ public class Sorts2 {
 		if (index < high)
 			quickSort(a, index, high);
 		return a;
-	  }
+	}
 }
