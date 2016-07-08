@@ -12,10 +12,10 @@ public class MakeChange {
 
 		int[] coins = new int[10];
 		for (int i = 0; i < coins.length; i++)
-			coins[i] = (int) (Math.random() * 200);
+			coins[i] = (int) (Math.random() * 200) + 1;
 
 		// Making sure a penny is in there
-		// coins[0] = 1;
+		 coins[0] = 1;
 
 		int val = (int) (Math.random() * 100);
 		int mC = minCoins(val, coins);
