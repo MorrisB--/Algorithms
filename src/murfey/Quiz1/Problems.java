@@ -10,6 +10,7 @@ public class Problems {
 		 * (>= 1.00) using divide and conquer. Show the first 8 guesses our
 		 * program will make for the input value 100.0:
 		 * 
+		 * 50, 25, 12, 6, 3, 2, 1 0
 		 * 
 		 * If I am given 7 chances to guess a number (being told ‘higher’ or
 		 * ‘lower’ after each guess) what is the maximum size of numbers I can
