@@ -4,6 +4,25 @@ public class Problems {
 	public static void main(String[] args) {
 
 		/*
+		 * Problem 1
+		 * 
+		 * Imagine we have a program that calculates the square root of a number
+		 * (>= 1.00) using divide and conquer. Show the first 8 guesses our
+		 * program will make for the input value 100.0:
+		 * 
+		 * 
+		 * If I am given 7 chances to guess a number (being told ‘higher’ or
+		 * ‘lower’ after each guess) what is the maximum size of numbers I can
+		 * guess from and still be expect to be 100% accurate.
+		 * 
+		 * 2^7, or 128
+		 * 
+		 * Value of 2^32 = 4,294,967,296
+		 * 
+		 */
+		
+		
+		/*
 		 * Problem 2, assuming for(int i = 0; i is actually for (int i = 0; i <=
 		 * n; i++), the typo made this unsolvable.
 		 * 
@@ -15,7 +34,7 @@ public class Problems {
 	/*
 	 * Problem 3
 	 * 
-	 * Method is Big O(n^2)
+	 * findTwo method is Big O(n^2)
 	 * 
 	 * 
 	 * Expected case/Worst case
@@ -33,20 +52,20 @@ public class Problems {
 					return true;
 		return false;
 	}
-	
+
 	/*
 	 * Problem 4
 	 * 
 	 * FALSE
+	 * 
+	 * 
 	 */
-	
+
 	/*
 	 * Problem 5
 	 * 
-	 *     [4, 2, 6, 5, 7, 1, 3, 8]
-	 *   [4, 2, 6, 5]    [7, 1, 3, 8]
-	 *  [4. 2] [6, 5]   [7, 1] [3, 8]
-	 * [4] [2] [6] [5] [7] [1] [3] [8]
+	 * [4, 2, 6, 5, 7, 1, 3, 8] [4, 2, 6, 5] [7, 1, 3, 8] [4. 2] [6, 5] [7, 1]
+	 * [3, 8] [4] [2] [6] [5] [7] [1] [3] [8]
 	 * 
 	 * mergeSort will be called 14 times
 	 */
