@@ -11,19 +11,15 @@ public class InsertionSortPart1 {
 	public static void insertIntoSorted(int[] ar) {
 
 		int temp = ar[ar.length - 1];
-		for (int i = ar.length - 1; i >= 0; i--) {
-			if (i == 0) {
-				ar[i] = temp;
-				break;
-			}
-			if (ar[i - 1] > temp) {
-				ar[i] = ar[i - 1];
+		int i = ar.length - 2;
+		for (i = ar.length - 2; i > -1; i--) {
+			if (ar[i] > temp) {
+				ar[i + 1] = ar[i];
 				printArray(ar);
-			} else {
-				ar[i] = temp;
+			} else
 				break;
-			}
 		}
+		ar[i + 1] = temp;
 		printArray(ar);
 	}
 
