@@ -10,15 +10,12 @@ public class InsertionSortPart1 {
 
 	public static void insertIntoSorted(int[] ar) {
 
-		int temp = ar[ar.length - 1];
-		int i = ar.length - 2;
-		for (i = ar.length - 2; i > -1; i--) {
-			if (ar[i] > temp) {
+		int temp = ar[ar.length - 1], i;
+		for (i = ar.length - 2; i > -1 && ar[i] > temp; i--) {
 				ar[i + 1] = ar[i];
 				printArray(ar);
-			} else
-				break;
 		}
+		
 		ar[i + 1] = temp;
 		printArray(ar);
 	}
