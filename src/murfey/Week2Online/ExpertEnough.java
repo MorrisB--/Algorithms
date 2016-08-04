@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ExpertEnough {
 	public static void main(String[] args) {
-
 		Scanner keyboard = new Scanner(System.in);
 		int testCases = keyboard.nextInt();
 
@@ -19,20 +18,23 @@ public class ExpertEnough {
 				database[j][1] = keyboard.next();
 				database[j][2] = keyboard.next();
 			}
+			
+			// How many queries?
+			int[] queries = new int[keyboard.nextInt()];
 
-			// Running each query
-			int queries = keyboard.nextInt();
-			for (int k = 0; k < queries; k++) {
+			// Filling the query array
+			for (int j = 0; j < queries.length; j++)
+				queries[j] = keyboard.nextInt();
+			
+			// Running the data
+			for (int j = 0; j < queries.length; j++) {
 
-				int queryPrice = keyboard.nextInt();
-
-				int count = 0;
-				int location = -1;
-				for (int l = 0; l < databaseSize; l++) {
-					if (queryPrice > Integer.parseInt(database[l][1])
-							&& queryPrice < Integer.parseInt(database[l][2])) {
+				int count = 0, location = -1;
+				for (int k = 0; k < databaseSize; k++) {
+					if (queries[j] >= Integer.parseInt(database[k][1])
+							&& queries[j] < Integer.parseInt(database[k][2])) {
 						count++;
-						location = l;
+						location = k;
 					}
 				}
 
@@ -43,7 +45,7 @@ public class ExpertEnough {
 
 			}
 		}
-
+		
 		keyboard.close();
 	}
 
